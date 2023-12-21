@@ -38,22 +38,36 @@ X_test, y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
 )
 
-print(os.path.exists("../model/"))
-
+# check if trained model exists
+model_path = r'C:\Users\z0176083\OneDrive - ZF Friedrichshafen AG\Documents\Udacity\ML_DevOps\Section_4_deployment\nd0821-c3-starter-code-master\starter\model'
+#if model exists, load the model
+if os.path.isfile(os.path.join(model_path,'trained_model.pkl')):
+    model = pickle.load(open(os.path.join(model_path,'trained_model.pkl'), 'rb'))
+    encoder = pickle.load(open(os.path.join(model_path,'encoder.pkl'), 'rb'))
+    lb = pickle.load(open(os.path.join(model_path,'labelizer.pkl'), 'rb'))
 # Train and save a model.
-model_path = './model'
-model = train_model(X_train,y_train)
-pickle.dump(model, open("../model/trained_model.pkl","wb"))
-pickle.dump(encoder, open("model/encoder.pkl","wb"))
-pickle.dump(lb, open("model/labelizer.pkl","wb"))
+else:
+    model = train_model(X_train,y_train)
+    pickle.dump(model, open(os.path.join(model_path,'trained_model.pkl'),'wb'))
+    pickle.dump(encoder, open(os.path.join(model_path,'encoder.pkl'),'wb'))
+    pickle.dump(lb, open(os.path.join(model_path,'labelizer.pkl'),'wb'))
+    logging.info(f"Model saved to: {model_path}")
 
-logging.info(f"Model saved to: {model_path}")
+
+
+#evaluate trained model on test set
+preds = inference(model, X_test)
+precision, recall, fbeta = compute_model_metrics(y_test, preds)
+logging.info(f"Classification target labels: {list(lb.classes_)}")
+logging.info(
+    f"precision:{precision:.3f}, recall:{recall:.3f}, fbeta:{fbeta:.3f}")
 
 #compute performance on categorical slices. save results to slice_output.txt
 for feature in cat_features:
     perf_df = perf_slices(test, feature, y_test, inference(model, X_test))
     f = open('slice_output.txt', 'a')
-    f.write(perf_df)
+    perf_string = perf_df.to_string(index=False)
+    f.write(perf_string)
     f.close()
     logging.info(f"Performance on slice {feature}")
     logging.info(perf_df)

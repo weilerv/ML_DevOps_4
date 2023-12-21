@@ -23,9 +23,9 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
-    clf = RandomForestClassifier(max_depth=2, random_state=0)
-    model = clf.fit(X_train, y_train)
-    return model
+    clf = RandomForestClassifier()
+    clf.fit(X_train, y_train)
+    return clf
 
 
 def compute_model_metrics(y, preds):
@@ -82,9 +82,16 @@ def perf_slices(df, feature, y, preds):
         fbeta: float
 
     """ 
+    feature_list = []
+    class_list = []
+    n_sample_list = []
+    precision_list = []
+    recall_list = []
+    fbeta_list = []
+
     feature_values = df[feature].unique().tolist()
 
-    df_slice = pd.DataFrame(index = feature_values, columns=['feature', 'n_samples', 'precision', 'recall', 'fbeta'])
+    df_slice = pd.DataFrame(columns=['feature', 'class', 'n_samples', 'precision', 'recall', 'fbeta'])
 
     for cls in feature_values:
         feature_ind = df[feature] == cls
@@ -92,11 +99,15 @@ def perf_slices(df, feature, y, preds):
         preds_feature = preds[feature_ind]
         precision, recall, fbeta = compute_model_metrics(y_feature, preds_feature)
 
-        df_slice[cls, 'feature'] = feature
-        df_slice[cls, 'n_samples'] = len(y_feature)
-        df_slice[cls, 'precision'] = precision
-        df_slice[cls, 'recall'] = recall
-        df_slice[cls, 'fbeta'] = fbeta
+        feature_list.append(feature)
+        class_list.append(cls)
+        n_sample_list.append(len(y_feature))
+        precision_list.append(precision)
+        recall_list.append(recall)
+        fbeta_list.append(fbeta)
+
+
+    df_slice = pd.DataFrame({'feature': feature_list, 'class': class_list, 'n_samples': n_sample_list, 'precision': precision_list, 'recall':recall_list, 'fbeta':fbeta_list})
 
     return df_slice
 
