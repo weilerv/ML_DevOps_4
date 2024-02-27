@@ -1,6 +1,6 @@
 # ML unit test
-from ml.model import train_model, compute_model_metrics, inference, perf_slices
-from ml.data import process_data
+from .ml.model import train_model, compute_model_metrics, inference, perf_slices
+from .ml.data import process_data
 from sklearn.model_selection import train_test_split
 import logging
 from sklearn.ensemble import RandomForestClassifier
