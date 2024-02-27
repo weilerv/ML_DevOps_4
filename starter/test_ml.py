@@ -6,7 +6,7 @@ import os
 import logging
 import pandas as pd
 import pickle
-from ml.model import inference, compute_model_metrics
+from .ml.model import inference, compute_model_metrics
 
 def test_import_data(path):
     try:
