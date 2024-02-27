@@ -19,7 +19,6 @@ for col in df.columns:
         df.rename(columns={col: col[1:]}, inplace=True)
         col = col[1:]
         if col in cat_features:
-            print('jaaa')
             df[col] = df[col].map(str.strip)
 
 df.to_csv("./data/cleaned_census.csv", index=False)

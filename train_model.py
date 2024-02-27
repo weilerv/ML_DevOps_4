@@ -1,6 +1,7 @@
 # Script to train machine learning model.
 
 from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 import pickle, os
 
 # Add the necessary imports for the starter code.
@@ -30,11 +31,11 @@ cat_features = [
     "native-country",
 ]
 X_train, y_train, encoder, lb = process_data(
-    train, categorical_features=cat_features, label="salary", training=True
+    train, categorical_features=cat_features, label="salary", training=True,
 )
 
 # Proces the test data with the process_data function.
-X_test, y_test, encoder, lb = process_data(
+X_test, y_test, _, _ = process_data(
     test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
 )
 
@@ -54,7 +55,6 @@ else:
     logging.info(f"Model saved to: {model_path}")
 
 
-
 #evaluate trained model on test set
 preds = inference(model, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
@@ -62,12 +62,7 @@ logging.info(f"Classification target labels: {list(lb.classes_)}")
 logging.info(
     f"precision:{precision:.3f}, recall:{recall:.3f}, fbeta:{fbeta:.3f}")
 
+print(test)
 #compute performance on categorical slices. save results to slice_output.txt
-for feature in cat_features:
-    perf_df = perf_slices(test, feature, y_test, inference(model, X_test))
-    f = open('slice_output.txt', 'a')
-    perf_string = perf_df.to_string(index=False)
-    f.write(perf_string)
-    f.close()
-    logging.info(f"Performance on slice {feature}")
-    logging.info(perf_df)
+perf_slices(test, encoder, lb, model, cat_features, save_slice=True)
+logging.info(f"Performance on slices done")

@@ -1,303 +1,102 @@
-  feature             class  n_samples  precision   recall    fbeta
-workclass           Private       4545        1.0 0.000000 0.000000
-workclass                 ?        369        1.0 0.000000 0.000000
-workclass         Local-gov        425        1.0 0.000000 0.000000
-workclass  Self-emp-not-inc        517        1.0 0.000000 0.000000
-workclass         State-gov        241        1.0 0.000000 0.000000
-workclass      Self-emp-inc        220        1.0 0.067227 0.125984
-workclass       Federal-gov        192        1.0 0.000000 0.000000
-workclass       Without-pay          3        1.0 1.000000 1.000000
-workclass      Never-worked          1        1.0 1.000000 1.000000  feature         class  n_samples  precision   recall    fbeta
-education  Some-college       1419        1.0 0.000000 0.000000
-education     Bachelors       1089        1.0 0.006772 0.013453
-education       Masters        314        1.0 0.000000 0.000000
-education       HS-grad       2151        1.0 0.000000 0.000000
-education   Prof-school        136        1.0 0.045045 0.086207
-education       7th-8th        144        1.0 0.000000 0.000000
-education    Assoc-acdm        208        1.0 0.000000 0.000000
-education     Doctorate         73        1.0 0.000000 0.000000
-education          11th        245        1.0 0.000000 0.000000
-education          10th        172        1.0 0.000000 0.000000
-education       1st-4th         31        1.0 0.000000 0.000000
-education       5th-6th         73        1.0 0.000000 0.000000
-education          12th         87        1.0 0.000000 0.000000
-education     Assoc-voc        259        1.0 0.000000 0.000000
-education           9th        100        1.0 0.000000 0.000000
-education     Preschool         12        1.0 1.000000 1.000000       feature                  class  n_samples  precision   recall    fbeta
-marital-status               Divorced        887        1.0 0.000000 0.000000
-marital-status          Never-married       2122        1.0 0.000000 0.000000
-marital-status     Married-civ-spouse       3017        1.0 0.005948 0.011826
-marital-status                Widowed        184        1.0 0.000000 0.000000
-marital-status              Separated        210        1.0 0.000000 0.000000
-marital-status  Married-spouse-absent         89        1.0 0.000000 0.000000
-marital-status      Married-AF-spouse          4        1.0 0.000000 0.000000   feature              class  n_samples  precision   recall    fbeta
-occupation  Handlers-cleaners        279        1.0 0.000000 0.000000
-occupation                  ?        370        1.0 0.000000 0.000000
-occupation              Sales        735        1.0 0.000000 0.000000
-occupation    Exec-managerial        838        1.0 0.007444 0.014778
-occupation     Prof-specialty        828        1.0 0.013123 0.025907
-occupation      Other-service        631        1.0 0.000000 0.000000
-occupation  Machine-op-inspct        391        1.0 0.000000 0.000000
-occupation    Farming-fishing        207        1.0 0.000000 0.000000
-occupation    Protective-serv        111        1.0 0.000000 0.000000
-occupation       Craft-repair        810        1.0 0.000000 0.000000
-occupation       Adm-clerical        766        1.0 0.000000 0.000000
-occupation       Tech-support        178        1.0 0.000000 0.000000
-occupation   Transport-moving        336        1.0 0.000000 0.000000
-occupation    Priv-house-serv         32        1.0 1.000000 1.000000
-occupation       Armed-Forces          1        1.0 1.000000 1.000000     feature           class  n_samples  precision   recall    fbeta
-relationship       Own-child        997        1.0 0.000000 0.000000
-relationship         Husband       2646        1.0 0.006797 0.013502
-relationship       Unmarried        642        1.0 0.000000 0.000000
-relationship  Other-relative        195        1.0 0.000000 0.000000
-relationship   Not-in-family       1705        1.0 0.000000 0.000000
-relationship            Wife        328        1.0 0.000000 0.000000feature               class  n_samples  precision   recall   fbeta
-   race               White       5594        1.0 0.004152 0.00827
-   race  Asian-Pac-Islander        214        1.0 0.032258 0.06250
-   race               Black        572        1.0 0.000000 0.00000
-   race  Amer-Indian-Eskimo         67        1.0 0.000000 0.00000
-   race               Other         66        1.0 0.000000 0.00000feature   class  n_samples  precision   recall    fbeta
-    sex    Male       4354        1.0 0.005979 0.011887
-    sex  Female       2159        1.0 0.000000 0.000000       feature                       class  n_samples  precision   recall    fbeta
-native-country               United-States       5798        1.0 0.004115 0.008197
-native-country                     England         20        1.0 0.000000 0.000000
-native-country                           ?        131        1.0 0.000000 0.000000
-native-country                 Philippines         38        1.0 0.071429 0.133333
-native-country                      Mexico        134        1.0 0.000000 0.000000
-native-country                       China         13        1.0 0.000000 0.000000
-native-country                     Vietnam         19        1.0 0.000000 0.000000
-native-country                   Guatemala         14        1.0 1.000000 1.000000
-native-country                      Taiwan         10        1.0 0.000000 0.000000
-native-country                      Poland         13        1.0 0.000000 0.000000
-native-country          Dominican-Republic         11        1.0 1.000000 1.000000
-native-country                      Canada         26        1.0 0.000000 0.000000
-native-country             Trinadad&Tobago          4        1.0 1.000000 1.000000
-native-country  Outlying-US(Guam-USVI-etc)          4        1.0 1.000000 1.000000
-native-country                 Puerto-Rico         24        1.0 0.000000 0.000000
-native-country                    Portugal         11        1.0 0.000000 0.000000
-native-country                    Scotland          3        1.0 1.000000 1.000000
-native-country                       South         20        1.0 0.000000 0.000000
-native-country                  Yugoslavia          3        1.0 0.000000 0.000000
-native-country                 El-Salvador         15        1.0 0.000000 0.000000
-native-country                       India         16        1.0 0.125000 0.222222
-native-country                       Japan         17        1.0 0.000000 0.000000
-native-country                     Germany         25        1.0 0.000000 0.000000
-native-country                        Iran         11        1.0 0.000000 0.000000
-native-country                    Cambodia          6        1.0 0.000000 0.000000
-native-country                        Cuba         19        1.0 0.000000 0.000000
-native-country                     Ireland          6        1.0 0.000000 0.000000
-native-country                     Ecuador          8        1.0 0.000000 0.000000
-native-country                     Jamaica         15        1.0 0.000000 0.000000
-native-country                       Italy         20        1.0 0.000000 0.000000
-native-country                      France          6        1.0 0.000000 0.000000
-native-country                       Haiti          6        1.0 1.000000 1.000000
-native-country                        Peru          8        1.0 1.000000 1.000000
-native-country                    Columbia         12        1.0 1.000000 1.000000
-native-country                     Hungary          3        1.0 0.000000 0.000000
-native-country                   Nicaragua          8        1.0 1.000000 1.000000
-native-country                      Greece          7        1.0 0.000000 0.000000
-native-country                    Thailand          3        1.0 1.000000 1.000000
-native-country                    Honduras          4        1.0 1.000000 1.000000
-native-country                        Laos          2        1.0 1.000000 1.000000  feature             class  n_samples  precision   recall    fbeta
-workclass  Self-emp-not-inc        520        1.0 0.000000 0.000000
-workclass           Private       4515        1.0 0.000951 0.001901
-workclass         Local-gov        411        1.0 0.000000 0.000000
-workclass      Self-emp-inc        241        1.0 0.088889 0.163265
-workclass                 ?        379        1.0 0.000000 0.000000
-workclass         State-gov        249        1.0 0.000000 0.000000
-workclass       Federal-gov        192        1.0 0.000000 0.000000
-workclass       Without-pay          4        1.0 1.000000 1.000000
-workclass      Never-worked          2        1.0 1.000000 1.000000  feature         class  n_samples  precision   recall    fbeta
-education       Masters        358        1.0 0.014354 0.028302
-education          11th        237        1.0 0.000000 0.000000
-education     Bachelors       1092        1.0 0.008658 0.017167
-education       HS-grad       2060        1.0 0.000000 0.000000
-education  Some-college       1451        1.0 0.000000 0.000000
-education     Assoc-voc        285        1.0 0.000000 0.000000
-education          10th        172        1.0 0.000000 0.000000
-education     Preschool         13        1.0 1.000000 1.000000
-education       7th-8th        136        1.0 0.000000 0.000000
-education     Doctorate         68        1.0 0.040000 0.076923
-education       1st-4th         38        1.0 0.000000 0.000000
-education       5th-6th         73        1.0 0.000000 0.000000
-education          12th         90        1.0 0.000000 0.000000
-education           9th        101        1.0 0.000000 0.000000
-education    Assoc-acdm        229        1.0 0.000000 0.000000
-education   Prof-school        110        1.0 0.048780 0.093023       feature                  class  n_samples  precision   recall    fbeta
-marital-status               Divorced        917        1.0 0.000000 0.000000
-marital-status     Married-civ-spouse       3013        1.0 0.009468 0.018759
-marital-status          Never-married       2096        1.0 0.000000 0.000000
-marital-status  Married-spouse-absent         91        1.0 0.000000 0.000000
-marital-status              Separated        188        1.0 0.000000 0.000000
-marital-status      Married-AF-spouse          2        1.0 1.000000 1.000000
-marital-status                Widowed        206        1.0 0.000000 0.000000   feature              class  n_samples  precision   recall    fbeta
-occupation     Prof-specialty        813        1.0 0.018717 0.036745
-occupation      Other-service        647        1.0 0.000000 0.000000
-occupation       Adm-clerical        758        1.0 0.000000 0.000000
-occupation   Transport-moving        318        1.0 0.000000 0.000000
-occupation       Craft-repair        853        1.0 0.000000 0.000000
-occupation    Exec-managerial        844        1.0 0.013129 0.025918
-occupation                  ?        381        1.0 0.000000 0.000000
-occupation    Farming-fishing        186        1.0 0.000000 0.000000
-occupation  Handlers-cleaners        283        1.0 0.000000 0.000000
-occupation  Machine-op-inspct        387        1.0 0.000000 0.000000
-occupation              Sales        709        1.0 0.000000 0.000000
-occupation       Tech-support        179        1.0 0.000000 0.000000
-occupation    Protective-serv        125        1.0 0.000000 0.000000
-occupation    Priv-house-serv         29        1.0 0.000000 0.000000
-occupation       Armed-Forces          1        1.0 1.000000 1.000000     feature           class  n_samples  precision   recall    fbeta
-relationship   Not-in-family       1650        1.0 0.000000 0.000000
-relationship         Husband       2668        1.0 0.010612 0.021002
-relationship       Own-child        983        1.0 0.000000 0.000000
-relationship            Wife        298        1.0 0.000000 0.000000
-relationship  Other-relative        205        1.0 0.000000 0.000000
-relationship       Unmarried        709        1.0 0.000000 0.000000feature               class  n_samples  precision  recall    fbeta
-   race  Asian-Pac-Islander        210        1.0 0.00000 0.000000
-   race               Black        613        1.0 0.00000 0.000000
-   race               White       5570        1.0 0.00904 0.017919
-   race               Other         58        1.0 0.00000 0.000000
-   race  Amer-Indian-Eskimo         62        1.0 0.00000 0.000000feature   class  n_samples  precision   recall    fbeta
-    sex    Male       4402        1.0 0.009496 0.018813
-    sex  Female       2111        1.0 0.000000 0.000000       feature                       class  n_samples  precision  recall    fbeta
-native-country                       India         16        1.0 0.00000 0.000000
-native-country               United-States       5805        1.0 0.00891 0.017663
-native-country                   Guatemala         17        1.0 1.00000 1.000000
-native-country                        Laos          3        1.0 0.00000 0.000000
-native-country          Dominican-Republic         20        1.0 1.00000 1.000000
-native-country                      Taiwan         14        1.0 0.00000 0.000000
-native-country                       South         12        1.0 0.00000 0.000000
-native-country                    Portugal          9        1.0 0.00000 0.000000
-native-country                           ?        113        1.0 0.00000 0.000000
-native-country                      Mexico        132        1.0 0.00000 0.000000
-native-country                       Haiti          5        1.0 1.00000 1.000000
-native-country                      Poland         16        1.0 0.00000 0.000000
-native-country                 Puerto-Rico         29        1.0 0.00000 0.000000
-native-country                 El-Salvador         19        1.0 1.00000 1.000000
-native-country                     Ecuador          5        1.0 0.00000 0.000000
-native-country                      Canada         28        1.0 0.00000 0.000000
-native-country                     Vietnam         16        1.0 0.00000 0.000000
-native-country                       Japan         13        1.0 0.00000 0.000000
-native-country                        Cuba         24        1.0 0.00000 0.000000
-native-country                     Germany         27        1.0 0.00000 0.000000
-native-country                    Thailand          2        1.0 1.00000 1.000000
-native-country                       Italy         19        1.0 0.00000 0.000000
-native-country                     England         18        1.0 0.00000 0.000000
-native-country                    Columbia          7        1.0 1.00000 1.000000
-native-country                        Iran         11        1.0 0.00000 0.000000
-native-country                 Philippines         48        1.0 0.00000 0.000000
-native-country                    Cambodia          4        1.0 0.00000 0.000000
-native-country                     Jamaica         15        1.0 0.00000 0.000000
-native-country                      France          6        1.0 0.00000 0.000000
-native-country                   Nicaragua          8        1.0 0.00000 0.000000
-native-country                        Peru          6        1.0 1.00000 1.000000
-native-country                        Hong          5        1.0 0.00000 0.000000
-native-country                       China         14        1.0 0.00000 0.000000
-native-country                  Yugoslavia          4        1.0 0.00000 0.000000
-native-country                    Honduras          2        1.0 1.00000 1.000000
-native-country             Trinadad&Tobago          4        1.0 0.00000 0.000000
-native-country                     Ireland          6        1.0 0.00000 0.000000
-native-country  Outlying-US(Guam-USVI-etc)          3        1.0 1.00000 1.000000
-native-country                    Scotland          2        1.0 0.00000 0.000000
-native-country                      Greece          4        1.0 0.00000 0.000000
-native-country                     Hungary          2        1.0 0.00000 0.000000  feature            class  n_samples  precision   recall    fbeta
-workclass          Private       4568        1.0 0.000978 0.001953
-workclass      Federal-gov        183        1.0 0.000000 0.000000
-workclass Self-emp-not-inc        505        1.0 0.000000 0.000000
-workclass        State-gov        263        1.0 0.000000 0.000000
-workclass                ?        347        1.0 0.000000 0.000000
-workclass        Local-gov        409        1.0 0.000000 0.000000
-workclass     Self-emp-inc        230        1.0 0.091603 0.167832
-workclass      Without-pay          5        1.0 1.000000 1.000000
-workclass     Never-worked          3        1.0 1.000000 1.000000  feature        class  n_samples  precision   recall    fbeta
-education         12th         87        1.0 0.000000 0.000000
-education    Bachelors       1015        1.0 0.006944 0.013793
-education         10th        185        1.0 0.000000 0.000000
-education    Assoc-voc        256        1.0 0.000000 0.000000
-education          9th         96        1.0 0.000000 0.000000
-education      HS-grad       2098        1.0 0.000000 0.000000
-education      1st-4th         40        1.0 0.000000 0.000000
-education   Assoc-acdm        202        1.0 0.000000 0.000000
-education Some-college       1487        1.0 0.000000 0.000000
-education      7th-8th        123        1.0 0.000000 0.000000
-education    Doctorate         96        1.0 0.057143 0.108108
-education  Prof-school        120        1.0 0.054945 0.104167
-education      Masters        377        1.0 0.004525 0.009009
-education         11th        262        1.0 0.000000 0.000000
-education      5th-6th         61        1.0 0.000000 0.000000
-education    Preschool          8        1.0 1.000000 1.000000       feature                 class  n_samples  precision   recall    fbeta
-marital-status              Divorced        917        1.0 0.000000 0.000000
-marital-status    Married-civ-spouse       2966        1.0 0.009538 0.018895
-marital-status         Never-married       2153        1.0 0.000000 0.000000
-marital-status             Separated        189        1.0 0.000000 0.000000
-marital-status               Widowed        202        1.0 0.000000 0.000000
-marital-status Married-spouse-absent         81        1.0 0.000000 0.000000
-marital-status     Married-AF-spouse          5        1.0 0.000000 0.000000   feature             class  n_samples  precision   recall    fbeta
-occupation  Transport-moving        316        1.0 0.000000 0.000000
-occupation             Sales        718        1.0 0.000000 0.000000
-occupation      Craft-repair        841        1.0 0.000000 0.000000
-occupation     Other-service        672        1.0 0.000000 0.000000
-occupation   Farming-fishing        201        1.0 0.000000 0.000000
-occupation Machine-op-inspct        381        1.0 0.000000 0.000000
-occupation                 ?        350        1.0 0.000000 0.000000
-occupation   Protective-serv        118        1.0 0.000000 0.000000
-occupation      Adm-clerical        791        1.0 0.000000 0.000000
-occupation   Exec-managerial        814        1.0 0.009709 0.019231
-occupation    Prof-specialty        853        1.0 0.022670 0.044335
-occupation Handlers-cleaners        248        1.0 0.000000 0.000000
-occupation      Tech-support        178        1.0 0.000000 0.000000
-occupation   Priv-house-serv         30        1.0 0.000000 0.000000
-occupation      Armed-Forces          2        1.0 1.000000 1.000000     feature          class  n_samples  precision   recall    fbeta
-relationship      Unmarried        670        1.0 0.000000 0.000000
-relationship        Husband       2603        1.0 0.010824 0.021417
-relationship  Not-in-family       1706        1.0 0.000000 0.000000
-relationship      Own-child       1024        1.0 0.000000 0.000000
-relationship           Wife        331        1.0 0.000000 0.000000
-relationship Other-relative        179        1.0 0.000000 0.000000feature              class  n_samples  precision   recall    fbeta
-   race              Black        627        1.0 0.000000 0.000000
-   race              White       5579        1.0 0.008259 0.016382
-   race Amer-Indian-Eskimo         60        1.0 0.000000 0.000000
-   race              Other         52        1.0 0.000000 0.000000
-   race Asian-Pac-Islander        195        1.0 0.020408 0.040000feature  class  n_samples  precision   recall    fbeta
-    sex   Male       4312        1.0 0.009623 0.019062
-    sex Female       2201        1.0 0.000000 0.000000       feature                      class  n_samples  precision   recall   fbeta
-native-country              United-States       5850        1.0 0.008247 0.01636
-native-country                     Mexico        129        1.0 0.000000 0.00000
-native-country                      Haiti          8        1.0 0.000000 0.00000
-native-country                   Columbia         10        1.0 1.000000 1.00000
-native-country                    Hungary          2        1.0 1.000000 1.00000
-native-country                      India         24        1.0 0.111111 0.20000
-native-country         Dominican-Republic         10        1.0 1.000000 1.00000
-native-country                   Thailand          6        1.0 0.000000 0.00000
-native-country                    Vietnam         19        1.0 0.000000 0.00000
-native-country                          ?        106        1.0 0.000000 0.00000
-native-country                       Cuba         20        1.0 0.000000 0.00000
-native-country                      South         15        1.0 0.000000 0.00000
-native-country                  Nicaragua         10        1.0 0.000000 0.00000
-native-country                El-Salvador         18        1.0 0.000000 0.00000
-native-country                  Guatemala         12        1.0 1.000000 1.00000
-native-country                Puerto-Rico         19        1.0 0.000000 0.00000
-native-country                      China         16        1.0 0.000000 0.00000
-native-country                    Jamaica         15        1.0 0.000000 0.00000
-native-country                Philippines         29        1.0 0.000000 0.00000
-native-country                      Italy         13        1.0 0.000000 0.00000
-native-country                     Canada         22        1.0 0.000000 0.00000
-native-country                   Cambodia          5        1.0 0.000000 0.00000
-native-country                       Peru          5        1.0 1.000000 1.00000
-native-country                     France          7        1.0 0.000000 0.00000
-native-country                    England         23        1.0 0.000000 0.00000
-native-country                    Ireland          3        1.0 1.000000 1.00000
-native-country                      Japan          7        1.0 0.000000 0.00000
-native-country                       Iran          8        1.0 0.000000 0.00000
-native-country                    Germany         27        1.0 0.000000 0.00000
-native-country                       Laos          4        1.0 0.000000 0.00000
-native-country                     Poland         15        1.0 0.000000 0.00000
-native-country                     Taiwan         11        1.0 0.000000 0.00000
-native-country                    Ecuador         11        1.0 0.000000 0.00000
-native-country                   Scotland          2        1.0 0.000000 0.00000
-native-country                       Hong          5        1.0 1.000000 1.00000
-native-country                   Portugal          8        1.0 0.000000 0.00000
-native-country            Trinadad&Tobago          4        1.0 1.000000 1.00000
-native-country Outlying-US(Guam-USVI-etc)          5        1.0 1.000000 1.00000
-native-country                     Greece          5        1.0 0.000000 0.00000
-native-country                 Yugoslavia          2        1.0 0.000000 0.00000
-native-country                   Honduras          3        1.0 1.000000 1.00000
+feature	class	n_samples	precision	recall	fbeta
+workclass	Private	4571	1.0	1.0	1.0
+workclass	Self-emp-not-inc	466	1.0	1.0	1.0
+workclass	Self-emp-inc	230	1.0	1.0	1.0
+workclass	Local-gov	431	1.0	1.0	1.0
+workclass	State-gov	273	1.0	1.0	1.0
+workclass	?	353	1.0	1.0	1.0
+workclass	Federal-gov	184	1.0	1.0	1.0
+workclass	Without-pay	4	1.0	1.0	1.0
+workclass	Never-worked	1	1.0	1.0	1.0
+education	HS-grad	2113	1.0	1.0	1.0
+education	Masters	359	1.0	1.0	1.0
+education	Assoc-voc	279	1.0	1.0	1.0
+education	1st-4th	33	1.0	1.0	1.0
+education	Bachelors	1058	1.0	1.0	1.0
+education	9th	100	1.0	1.0	1.0
+education	11th	225	1.0	1.0	1.0
+education	Some-college	1486	1.0	1.0	1.0
+education	Prof-school	116	1.0	1.0	1.0
+education	Assoc-acdm	202	1.0	1.0	1.0
+education	10th	183	1.0	1.0	1.0
+education	12th	89	1.0	1.0	1.0
+education	Doctorate	84	1.0	1.0	1.0
+education	5th-6th	58	1.0	1.0	1.0
+education	7th-8th	120	1.0	1.0	1.0
+education	Preschool	8	1.0	1.0	1.0
+marital-status	Married-civ-spouse	3057	1.0	1.0	1.0
+marital-status	Never-married	2134	1.0	1.0	1.0
+marital-status	Divorced	856	1.0	1.0	1.0
+marital-status	Separated	201	1.0	1.0	1.0
+marital-status	Widowed	185	1.0	1.0	1.0
+marital-status	Married-spouse-absent	76	1.0	1.0	1.0
+marital-status	Married-AF-spouse	4	1.0	1.0	1.0
+occupation	Other-service	668	1.0	1.0	1.0
+occupation	Farming-fishing	201	1.0	1.0	1.0
+occupation	Prof-specialty	866	1.0	1.0	1.0
+occupation	Sales	735	1.0	1.0	1.0
+occupation	Exec-managerial	793	1.0	1.0	1.0
+occupation	Craft-repair	792	1.0	1.0	1.0
+occupation	Handlers-cleaners	266	1.0	1.0	1.0
+occupation	Adm-clerical	721	1.0	1.0	1.0
+occupation	Transport-moving	334	1.0	1.0	1.0
+occupation	Machine-op-inspct	424	1.0	1.0	1.0
+occupation	?	354	1.0	1.0	1.0
+occupation	Protective-serv	150	1.0	1.0	1.0
+occupation	Tech-support	184	1.0	1.0	1.0
+occupation	Priv-house-serv	24	1.0	1.0	1.0
+occupation	Armed-Forces	1	1.0	1.0	1.0
+relationship	Husband	2704	1.0	1.0	1.0
+relationship	Not-in-family	1661	1.0	1.0	1.0
+relationship	Wife	307	1.0	1.0	1.0
+relationship	Unmarried	662	1.0	1.0	1.0
+relationship	Own-child	980	1.0	1.0	1.0
+relationship	Other-relative	199	1.0	1.0	1.0
+race	White	5523	1.0	1.0	1.0
+race	Other	57	1.0	1.0	1.0
+race	Black	655	1.0	1.0	1.0
+race	Asian-Pac-Islander	219	1.0	1.0	1.0
+race	Amer-Indian-Eskimo	59	1.0	1.0	1.0
+sex	Male	4388	1.0	1.0	1.0
+sex	Female	2125	1.0	1.0	1.0
+native-country	United-States	5851	1.0	1.0	1.0
+native-country	Italy	20	1.0	1.0	1.0
+native-country	Dominican-Republic	17	1.0	1.0	1.0
+native-country	Mexico	125	1.0	1.0	1.0
+native-country	Philippines	47	1.0	1.0	1.0
+native-country	Hungary	4	1.0	1.0	1.0
+native-country	Jamaica	18	1.0	1.0	1.0
+native-country	Japan	22	1.0	1.0	1.0
+native-country	Laos	6	1.0	1.0	1.0
+native-country	?	106	1.0	1.0	1.0
+native-country	Vietnam	12	1.0	1.0	1.0
+native-country	El-Salvador	19	1.0	1.0	1.0
+native-country	Guatemala	11	1.0	1.0	1.0
+native-country	Germany	25	1.0	1.0	1.0
+native-country	Iran	11	1.0	1.0	1.0
+native-country	Taiwan	13	1.0	1.0	1.0
+native-country	Puerto-Rico	19	1.0	1.0	1.0
+native-country	England	12	1.0	1.0	1.0
+native-country	India	22	1.0	1.0	1.0
+native-country	Columbia	11	1.0	1.0	1.0
+native-country	France	5	1.0	1.0	1.0
+native-country	Cuba	16	1.0	1.0	1.0
+native-country	Haiti	7	1.0	1.0	1.0
+native-country	China	9	1.0	1.0	1.0
+native-country	Thailand	4	1.0	1.0	1.0
+native-country	South	19	1.0	1.0	1.0
+native-country	Poland	12	1.0	1.0	1.0
+native-country	Scotland	2	1.0	1.0	1.0
+native-country	Canada	22	1.0	1.0	1.0
+native-country	Nicaragua	7	1.0	1.0	1.0
+native-country	Hong	5	1.0	1.0	1.0
+native-country	Cambodia	4	1.0	1.0	1.0
+native-country	Trinadad&Tobago	3	1.0	1.0	1.0
+native-country	Ireland	5	1.0	1.0	1.0
+native-country	Portugal	4	1.0	1.0	1.0
+native-country	Ecuador	5	1.0	1.0	1.0
+native-country	Peru	3	1.0	1.0	1.0
+native-country	Greece	5	1.0	1.0	1.0
+native-country	Yugoslavia	2	1.0	1.0	1.0
+native-country	Honduras	1	1.0	1.0	1.0
+native-country	Outlying-US(Guam-USVI-etc)	2	1.0	1.0	1.0

@@ -3,6 +3,8 @@ import pandas as pd
 import logging
 from sklearn.ensemble import RandomForestClassifier
 
+from .data import process_data
+
 logging.basicConfig(filename='logging.log',
                     level=logging.INFO,
                     filemode='w',
@@ -68,7 +70,7 @@ def inference(model, X):
     return preds
 
 
-def perf_slices(df, feature, y, preds):
+def perf_slices(df_test: pd.DataFrame, encoder, lb, model, cat_features, save_slice: bool = True):
     """Compute performance on slices for given categorical feature.
 
     Returns
@@ -82,32 +84,38 @@ def perf_slices(df, feature, y, preds):
         fbeta: float
 
     """ 
-    feature_list = []
+    cat_list = []
     class_list = []
     n_sample_list = []
     precision_list = []
     recall_list = []
     fbeta_list = []
 
-    feature_values = df[feature].unique().tolist()
-
     df_slice = pd.DataFrame(columns=['feature', 'class', 'n_samples', 'precision', 'recall', 'fbeta'])
+    for cat in cat_features:
+        for cls in df_test[cat].unique():
+            df_temp = df_test[df_test[cat]==cls]
+            #process test data
+            X_test, y_test, _,_ = process_data(
+                df_temp, categorical_features=cat_features, label="salary", 
+                training=False, encoder=encoder, lb=lb
+            )
 
-    for cls in feature_values:
-        feature_ind = df[feature] == cls
-        y_feature = y[feature_ind]
-        preds_feature = preds[feature_ind]
-        precision, recall, fbeta = compute_model_metrics(y_feature, preds_feature)
+            preds = inference(model, X_test)
+            precision, recall, fbeta = compute_model_metrics(y_test, preds)
 
-        feature_list.append(feature)
-        class_list.append(cls)
-        n_sample_list.append(len(y_feature))
-        precision_list.append(precision)
-        recall_list.append(recall)
-        fbeta_list.append(fbeta)
+            cat_list.append(cat)
+            class_list.append(cls)
+            n_sample_list.append(len(y_test))
+            precision_list.append(precision)
+            recall_list.append(recall)
+            fbeta_list.append(fbeta)
 
 
-    df_slice = pd.DataFrame({'feature': feature_list, 'class': class_list, 'n_samples': n_sample_list, 'precision': precision_list, 'recall':recall_list, 'fbeta':fbeta_list})
+    df_slice = pd.DataFrame({'feature': cat_list, 'class': class_list, 'n_samples': n_sample_list, 'precision': precision_list, 'recall':recall_list, 'fbeta':fbeta_list})
+
+    if save_slice:
+        df_slice.to_csv('slice_output.txt', index=False, sep='\t')
 
     return df_slice
 
