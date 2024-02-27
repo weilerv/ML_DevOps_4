@@ -21,7 +21,7 @@ cat_features = [
     "native-country",
 ]
 
-data = pd.read_csv(r'C:\Users\z0176083\OneDrive - ZF Friedrichshafen AG\Documents\Udacity\ML_DevOps\Section_4_deployment\nd0821-c3-starter-code-master\starter\data\cleaned_census.csv')
+data = pd.read_csv('data/cleaned_census.csv')
 
 train, test = train_test_split(data, test_size=0.20)
 

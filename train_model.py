@@ -15,7 +15,7 @@ logging.basicConfig(filename='logging.log',
                     filemode='a',
                     format='%(name)s - %(levelname)s - %(message)s')
 # Add code to load in the data.
-data = pd.read_csv(r'C:\Users\z0176083\OneDrive - ZF Friedrichshafen AG\Documents\Udacity\ML_DevOps\Section_4_deployment\nd0821-c3-starter-code-master\starter\data\cleaned_census.csv')
+data = pd.read_csv('data/cleaned_census.csv')
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
