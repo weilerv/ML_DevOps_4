@@ -94,5 +94,5 @@ async def predict(data: InputData):
                                       encoder=encoder)
     prediction = inference(model, pred_data)
     prediction = int(prediction)
-    pred = {'>50K' if prediction == 1 else '<=50K'}
+    pred = {'<=50K' if prediction == 1 else '>50K'}
     return {'prediction:' : pred}
