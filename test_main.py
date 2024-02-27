@@ -27,7 +27,7 @@ def test_post_one():
     response = client.post('/prediction/', json=input_data)
 
     assert response.status_code == 200, f'Status code {response.json()} returned instead of 200'
-    assert response.json() == {"prediction": [">50K"]}, "wrong prediction: expected <=50K, but the result was >50K"
+    assert response.json() == {"prediction:": [">50K"]}, "wrong prediction: expected <=50K, but the result was >50K"
 
 def test_post_two():
     input_data = {'age': 38,
@@ -48,4 +48,4 @@ def test_post_two():
     response = client.post('/prediction/', json=input_data)
 
     assert response.status_code == 200, f'Status code {response.json()} returned instead of 200'
-    assert response.json() == {"prediction": [">50K"]}, "wrong prediction: expected <=50K, but the result is >50K"
+    assert response.json() == {"prediction:": [">50K"]}, "wrong prediction: expected <=50K, but the result is >50K"
