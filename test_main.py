@@ -1,6 +1,9 @@
 from fastapi.testclient import TestClient
 import os
-from starter.main import app
+try:
+    from main import app
+except:
+    from .main import app
 
 client = TestClient(app)
 

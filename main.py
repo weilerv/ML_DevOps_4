@@ -17,8 +17,15 @@ import os
 import pickle
 import numpy as np
 
-from starter.ml.data import process_data
-from starter.ml.model import inference
+try:
+    from ml.data import process_data
+except:
+    from .ml.data import process_data
+try:
+    from ml.model import inference
+except:
+    from .ml.model import inference
+
 
 #load model
 model_path = 'model/trained_model.pkl'
