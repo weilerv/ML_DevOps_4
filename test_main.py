@@ -29,7 +29,6 @@ def test_post_one():
                   'native-country': 'United-States'
                   }
     response = client.post('/prediction/', json=input_data)
-
     assert response.status_code == 200, f'Status code {response.json()} returned instead of 200'
     assert response.json() == {"prediction:": ["<=50K"]}, "wrong prediction: expected <=50K, but the result was >50K"
 
